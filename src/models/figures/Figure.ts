@@ -3,13 +3,13 @@ import {Colors} from "../Colors";
 import {Cell} from "../Cell";
 
 export enum FigureNames {
-  FIGURE = "Фигура",
-  KING = "Король",
-  KNIGHT = "Конь",
-  PAWN = "Пешка",
-  QUEEN = "Ферзь",
-  ROOK = "Ладья",
-  BISHOP = "Слон",
+  FIGURE = "Figure",
+  KING = "King",
+  KNIGHT = "Knight",
+  PAWN = "Pawn",
+  QUEEN = "Queen",
+  ROOK = "Rook",
+  BISHOP = "Bishop",
 }
 
 export class Figure {
@@ -32,9 +32,7 @@ export class Figure {
   canMove(target: Cell) : boolean {
     if(target.figure?.color === this.color)
       return false
-    if(target.figure?.name === FigureNames.KING)
-      return false
-    return true;
+    return target.figure?.name !== FigureNames.KING;
   }
 
   moveFigure(target: Cell) {}
